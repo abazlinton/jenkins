@@ -3,7 +3,8 @@ pipeline {
 
     triggers{
         GenericTrigger(
-          token: 'testing123'
+          token: 'testing123',
+          printPostContent: true,
         )
     }
 
