@@ -8,7 +8,8 @@ pipeline {
             genericVariables: [
                 [key: 'contentfulData', value: '$.contentfulData', defaultValue: "{}"]
             ],
-          printContributedVariables: true
+          printContributedVariables: true,
+          causeString: 'Contentful: $contentfulData.environment.id'
         )
     }
 
