@@ -5,6 +5,9 @@ pipeline {
         GenericTrigger(
           token: 'testing123',
           printPostContent: true,
+            genericVariables: [
+                [key: 'data', value: '$..*']
+            ]
         )
     }
 
