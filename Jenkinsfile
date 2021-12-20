@@ -6,7 +6,7 @@ pipeline {
           token: 'testing123',
           printPostContent: true,
             genericVariables: [
-                [key: 'contentfulData', value: '$.contentfulData.*', defaultValue: "{}"]
+                [key: 'contentfulData', value: '$.contentfulData', defaultValue: "{}"]
             ]
         )
     }
