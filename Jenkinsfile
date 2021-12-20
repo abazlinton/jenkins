@@ -8,6 +8,7 @@ pipeline {
             genericVariables: [
                 [key: 'contentfulData', value: '$.contentfulData', defaultValue: "{}"]
             ]
+          printContributedVariables: true
         )
     }
 
