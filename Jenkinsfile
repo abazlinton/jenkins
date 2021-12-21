@@ -1,4 +1,4 @@
- def getCauseString(contentfulData) = {
+ def getCauseString(contentfulData) {
     println contentfulData.getClass()
     return 'Contentful:'
 }
