@@ -9,7 +9,7 @@ pipeline {
               [key: 'contentfulData', value: '$.contentfulData', defaultValue: ""]
           ],
           printContributedVariables: true,
-          causeString: 'Contentful: $contentfulData.environment.id'
+          causeString: 'Contentful: $contentfulData_environment_id'
         )
     }
 
