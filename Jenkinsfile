@@ -1,6 +1,9 @@
 pipeline {
+  
+  // remove me
   agent any
 
+  // GenericTrigger section to overwrite current one
   triggers{
     GenericTrigger(
       // match token in Contentful webhook POST params
@@ -28,6 +31,7 @@ pipeline {
       causeString: 'Contentful: $contentfulData_sys_contentType_sys_id $contentfulData_sys_updatedAt'
     )
   }
+  // remove me
   stages {
     stage('Hello') {
       steps {
