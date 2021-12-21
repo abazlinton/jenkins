@@ -1,3 +1,8 @@
+ def getCauseString(contentfulData) = {
+    println contentfulData.getClass()
+    return 'Contentful:'
+}
+
 pipeline {
   
   // remove me
@@ -30,10 +35,6 @@ pipeline {
       // Generic Webhook Trigger by default traverses the JSON and creates variables for each node
       causeString: getCauseString()
     )
-  }
-
-  def getCauseString(contentfulData: ObjectNode): String = {
-    return "Contentful: " + contentfulData.get("sys_contentType_sys_id").asText() + " " + contentfulData.get("sys_updatedAt").asText()
   }
 
   }
