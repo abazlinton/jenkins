@@ -28,4 +28,6 @@ pipeline {
           causeString: 'Contentful: $contentfulData_sys_contentType_sys_id $contentfulData_sys_updatedAt'
         )
     }
+    stages {
+    }
 }
