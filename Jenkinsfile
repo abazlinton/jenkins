@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-//     parameters {
-//      stringParam('contentfulData', '', 'Make tu   
-//     }
+    parameters {
+     stringParam('contentfulData_environment_id', 'no Webhook', 'Make sure this variable is present even if build manually triggered")  
+    }
     
     triggers{
         GenericTrigger(
@@ -21,7 +21,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                echo contentfulData
+                echo contentfulData_environment_id
             }
         }
     }
