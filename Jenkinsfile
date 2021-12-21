@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string('contentfulData_environment_id', 'no Webhook', 'Make sure this variable is present even if build manually triggered')  
+        string(name: 'contentfulData_environment_id', defaultValue: 'no Webhook', description: 'Ensure contentfulData_environment_id is present even if build manually triggered')  
     }
     
     triggers{
