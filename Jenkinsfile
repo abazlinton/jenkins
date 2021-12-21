@@ -25,7 +25,7 @@ pipeline {
       ],
         
       // uncomment below to debug Generic Webhook Trigger contributed variables  
-      // printContributedVariables: true,
+      printContributedVariables: true,
       
       // Generic Webhook Trigger by default traverses the JSON and creates variables for each node
       causeString: 'Contentful: $contentfulData_sys_contentType_sys_id $contentfulData_sys_updatedAt'
