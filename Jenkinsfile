@@ -9,7 +9,7 @@ pipeline {
               [key: 'contentfulData', value: '$', defaultValue: ""]
           ],
           printContributedVariables: true,
-          causeString: 'Contentful: $Imadethisup $contentfulData_sys_updatedAt'
+          causeString: 'Contentful: $contentfulData_sys_contentType_sys_id $contentfulData_sys_updatedAt'
         )
     }
 
