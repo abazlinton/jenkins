@@ -1,6 +1,6 @@
- def getCauseString(contentfulData) {
-    println contentfulData.getClass()
-    return 'Contentful:'
+def getCauseString(contentfulData) {
+  println contentfulData.getClass()
+  return 'Contentful:'
 }
 
 pipeline {
@@ -37,7 +37,7 @@ pipeline {
     )
   }
 
-  }
+
   // remove me
   stages {
     stage('Hello') {
