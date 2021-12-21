@@ -15,9 +15,9 @@ pipeline {
                   key: 'contentfulData', 
                   value: '$', 
                   defaultValue: "",
-                  expressionType: 'JSONPath', // Optional, default is 
-                  regexpFilter: '',
-                  defaultValue: ''
+                  expressionType: 'JSONPath',   // Optional, default is JSONPath
+                  regexpFilter: '',             // Optional, default is empty string
+                  defaultValue: ''              // Optional, default is empty string
               ]
           ],
             
