@@ -1,6 +1,7 @@
 def getCauseString(contentfulData) {
-  println contentfulData.getClass()
-  return 'Contentful:'
+  def contentfulObj = readJSON text: contentfulData
+  println contentfulObj.getClass()
+  return 'Contentful: ' + contentfulObj['sys']['type']
 }
 
 pipeline {
