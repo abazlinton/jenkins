@@ -1,5 +1,5 @@
 def getCauseString(contentfulData) {
-  def contentfulObj = readJSON text: contentfulData
+  def contentfulObj = readJson text: contentfulData
   println contentfulObj.getClass()
   return 'Contentful: ' + contentfulObj['sys']['type']
 }
