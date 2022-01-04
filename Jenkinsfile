@@ -1,6 +1,8 @@
+import groovy.json.jsonSlurper
+
 def getCauseString(contentfulData) {
-  def contentfulObj = readJson text: contentfulData
-  println contentfulObj.getClass()
+  def jsonSlurper = new jsonSlurper()
+  def contentfulObj = jsonSlurper.parseText(contentfulData)
   return 'Contentful: ' + contentfulObj['sys']['type']
 }
 
