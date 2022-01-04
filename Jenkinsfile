@@ -3,7 +3,11 @@ import groovy.json.JsonSlurper
 def getCauseString(contentfulData) {
   def jsonSlurper = new JsonSlurper()
   def contentfulObj = jsonSlurper.parseText(contentfulData)
-  return 'Contentful: ' + contentfulObj['sys']['type']
+  def publishReason = contentfulObj['sys']['type'] + " - "
+  if (publishReason == 'Entry') {
+    publishReason += contentfulObj['sys']['contentType']['sys']['id']
+  }
+  return 'Contentful: ' + publishReason
 }
 
 pipeline {
@@ -30,6 +34,9 @@ pipeline {
           regexpFilter: '',             // Optional, default is empty string
           defaultValue: ''              // Optional, default is empty string
         ]
+      ],
+      genericHeaderVariables: [
+        [key: 'X-Contentful-Topic']
       ],
         
       // uncomment below to debug Generic Webhook Trigger contributed variables  
