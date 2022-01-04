@@ -1,4 +1,4 @@
-import groovy.json.jsonSlurper
+import groovy.json.JsonSlurper
 
 def getCauseString(contentfulData) {
   def jsonSlurper = new jsonSlurper()
