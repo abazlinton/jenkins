@@ -1,13 +1,14 @@
 import groovy.json.JsonSlurper
 
-def getCauseString(contentfulData) {
+def getCauseString(contentfulData, x_contentful_topic) {
   def jsonSlurper = new JsonSlurper()
   def contentfulObj = jsonSlurper.parseText(contentfulData)
-  def publishReason = contentfulObj['sys']['type'] + " - "
+  def publishReason = contentfulObj['sys']['type']
+  def publishDetail = ""
   if (publishReason == 'Entry') {
-    publishReason += contentfulObj['sys']['contentType']['sys']['id']
+    publishDetail = contentfulObj['sys']['contentType']['sys']['id']
   }
-  return 'Contentful: ' + publishReason
+  return x_contentful_topic + " - " + publishDetail
 }
 
 pipeline {
@@ -43,7 +44,7 @@ pipeline {
       printContributedVariables: true,
       
       // Generic Webhook Trigger by default traverses the JSON and creates variables for each node
-      causeString: getCauseString(contentfulData)
+      causeString: getCauseString(contentfulData, x_contentful_topic)
     )
   }
 
