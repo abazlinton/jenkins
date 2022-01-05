@@ -18,7 +18,7 @@ pipeline {
       genericVariables: [
         [
           key: 'contentType', 
-          value: '$.contentfulData.sys.contentType.sys.id', 
+          value: '$.sys.contentType.sys.id', 
           defaultValue: "",
           expressionType: 'JSONPath',   // Optional, default is JSONPath
           regexpFilter: '',             // Optional, default is empty string
@@ -26,7 +26,7 @@ pipeline {
         ],
         [
           key: 'updatedAt', 
-          value: '$.contentfulData.sys.updatedAt',
+          value: '$.sys.updatedAt',
           defaultValue: "",
           expressionType: 'JSONPath',   // Optional, default is JSONPath
           regexpFilter: '',             // Optional, default is empty string
