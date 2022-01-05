@@ -28,7 +28,7 @@ pipeline {
         ],
         [
           key: 'blah', 
-          value: '$thisIsNonsense',
+          value: '$.thisIsNonsense',
           defaultValue: "",
           expressionType: 'JSONPath',   // Optional, default is JSONPath
           regexpFilter: '',             // Optional, default is empty string
