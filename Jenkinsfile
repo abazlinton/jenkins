@@ -26,18 +26,21 @@ pipeline {
           defaultValue: ''              // Optional, default is empty string
         ],
         [
-          // Identity changed Asset (Media)
-          key: 'assetChange', 
+          // Way of identifying a changed Asset (Media)
+          key: 'title', 
           value: '$.fields.title.en-US', 
-          defaultValue: "",
+          defaultValue: '',
         ],
         [
           key: 'updatedAt', 
           value: '$.sys.updatedAt',
-          defaultValue: "",
+          defaultValue: '',
         ]
       ],
       genericHeaderVariables: [
+        // e.g. ContentManagement.Entry.publish
+        // e.g. ContentManagement.Entry.unpublish
+        // Appears to be only way of finding the 'kind' of change
         [key: 'X-Contentful-Topic']
       ],
         
@@ -45,8 +48,7 @@ pipeline {
       printContributedVariables: true,
       
       // Generic Webhook Trigger by default traverses the JSON and creates variables for each node
-      causeString: "\$x_contentful_topic - \$contentType\$assetChange - \$updatedAt"
-    )
+      causeString: '\$x_contentful_topic - \$contentType\$title - \$updatedAt'
   }
 
 
