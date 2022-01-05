@@ -17,8 +17,24 @@ pipeline {
       // value is the JSONPath  
       genericVariables: [
         [
-          key: 'contentType', 
+          key: 'contentChange', 
           value: '$.sys.contentType.sys.id', 
+          defaultValue: "",
+          expressionType: 'JSONPath',   // Optional, default is JSONPath
+          regexpFilter: '',             // Optional, default is empty string
+          defaultValue: ''              // Optional, default is empty string
+        ],
+        [
+          key: 'contentTypeChange', 
+          value: '$.sys.id', 
+          defaultValue: "",
+          expressionType: 'JSONPath',   // Optional, default is JSONPath
+          regexpFilter: '',             // Optional, default is empty string
+          defaultValue: ''              // Optional, default is empty string
+        ],
+        [
+          key: 'assetChange', 
+          value: '$.fields.title.en-US', 
           defaultValue: "",
           expressionType: 'JSONPath',   // Optional, default is JSONPath
           regexpFilter: '',             // Optional, default is empty string
@@ -41,7 +57,7 @@ pipeline {
       printContributedVariables: true,
       
       // Generic Webhook Trigger by default traverses the JSON and creates variables for each node
-      causeString: "\$x_contentful_topic - \$contentType \$updatedAt"
+      causeString: "\$x_contentful_topic - \$contentType \$contentTypeChange \$assetChange \$updatedAt"
     )
   }
 
