@@ -20,7 +20,7 @@ pipeline {
           // Content Type (Model) of the changed Content
           key: 'contentType', 
           value: '$.sys.contentType.sys.id', 
-          defaultValue: "",
+          defaultValue: '',
           expressionType: 'JSONPath',   // Optional, default is JSONPath
           regexpFilter: '',             // Optional, default is empty string
           defaultValue: ''              // Optional, default is empty string
@@ -48,7 +48,7 @@ pipeline {
       printContributedVariables: true,
       
       // Generic Webhook Trigger by default traverses the JSON and creates variables for each node
-      causeString: '\$x_contentful_topic - \$contentType\$title - \$updatedAt'
+      causeString: "\$x_contentful_topic - \$contentType\$title - \$updatedAt"
   }
 
 
