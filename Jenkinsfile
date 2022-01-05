@@ -1,7 +1,5 @@
 import groovy.json.JsonSlurper
 
-def contentfulData_sys_contentType_sys_id = ""
-
 pipeline {
   
   // remove me
@@ -19,16 +17,16 @@ pipeline {
       // value is the JSONPath  
       genericVariables: [
         [
-          key: 'contentfulData', 
-          value: '$', 
+          key: 'contentType', 
+          value: '$.contentfulData.sys.contentType.sys.id', 
           defaultValue: "",
           expressionType: 'JSONPath',   // Optional, default is JSONPath
           regexpFilter: '',             // Optional, default is empty string
           defaultValue: ''              // Optional, default is empty string
         ],
         [
-          key: 'blah', 
-          value: '$.thisIsNonsense',
+          key: 'updatedAt', 
+          value: '$.contentfulData.sys.updatedAt',
           defaultValue: "",
           expressionType: 'JSONPath',   // Optional, default is JSONPath
           regexpFilter: '',             // Optional, default is empty string
@@ -43,7 +41,7 @@ pipeline {
       printContributedVariables: true,
       
       // Generic Webhook Trigger by default traverses the JSON and creates variables for each node
-      causeString: "\$x_contentful_topic - \$contentfulData_sys_contentType_sys_id \$contentfulData_sys_updatedAt '\$blah'"
+      causeString: "\$x_contentful_topic - \$contentType \$updatedAt"
     )
   }
 
