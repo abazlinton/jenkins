@@ -26,15 +26,18 @@ pipeline {
         ],
         [
           key: 'contentTypeChange', 
-          value: '$.sys.id', 
+          value: '$.sys.id',
+          defaultValue: ""
         ],
         [
           key: 'assetChange', 
           value: '$.fields.title.en-US', 
+          defaultValue: "",
         ],
         [
           key: 'updatedAt', 
           value: '$.sys.updatedAt',
+          defaultValue: "",
         ]
       ],
       genericHeaderVariables: [
