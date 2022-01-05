@@ -17,7 +17,7 @@ pipeline {
       // value is the JSONPath  
       genericVariables: [
         [
-          // Content changes
+          // Content Type (Model) of the changed Content
           key: 'contentType', 
           value: '$.sys.contentType.sys.id', 
           defaultValue: "",
@@ -26,7 +26,7 @@ pipeline {
           defaultValue: ''              // Optional, default is empty string
         ],
         [
-          // Asset (Media) changes
+          // Identity changed Asset (Media)
           key: 'assetChange', 
           value: '$.fields.title.en-US', 
           defaultValue: "",
@@ -45,7 +45,7 @@ pipeline {
       printContributedVariables: true,
       
       // Generic Webhook Trigger by default traverses the JSON and creates variables for each node
-      causeString: "\$x_contentful_topic - \$contentType  \$assetChange - \$updatedAt"
+      causeString: "\$x_contentful_topic - \$contentType\$assetChange - \$updatedAt"
     )
   }
 
