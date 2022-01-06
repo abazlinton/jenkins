@@ -55,7 +55,7 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        echo $x_contentful_topic
+        echo x_contentful_topic
       }
     }
   }
