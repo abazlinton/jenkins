@@ -46,7 +46,7 @@ pipeline {
       printContributedVariables: true,
       
       // Generic Webhook Trigger by default traverses the JSON and creates variables for each node
-      causeString: '$x_contentful_topic - $contentType$title - $updatedAt'
+      causeString: '\$nonsense',
     )
   }
 
