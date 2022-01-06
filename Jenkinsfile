@@ -21,18 +21,18 @@ pipeline {
           defaultValue: '',
           expressionType: 'JSONPath',   // Optional, default is JSONPath
           regexpFilter: '',             // Optional, default is empty string
-          defaultValue: ''              // Optional, default is empty string
+          // defaultValue: ''              // Optional, default is empty string
         ],
         [
           // Way of identifying a changed Asset (Media)
           key: 'title', 
           value: '$.fields.title.en-US', 
-          defaultValue: '',
+          // defaultValue: '',
         ],
         [
           key: 'updatedAt', 
           value: '$.sys.updatedAt',
-          defaultValue: '',
+          // defaultValue: '',
         ]
       ],
       genericHeaderVariables: [
